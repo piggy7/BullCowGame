@@ -1,0 +1,6 @@
+﻿  Main.cpp
+c:\users\denma\desktop\programming stuff\c++\section_02\bullcowgame\main.cpp(44): warning C4129: ' ': unrecognized character escape sequence
+  FBullCowGame.cpp
+  Generating Code...
+  BullCowGame.vcxproj -> C:\Users\Denma\Desktop\Programming Stuff\C++\Section_02\Debug\BullCowGame.exe
+  BullCowGame.vcxproj -> C:\Users\Denma\Desktop\Programming Stuff\C++\Section_02\Debug\BullCowGame.pdb (Partial PDB)
