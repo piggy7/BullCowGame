@@ -4,6 +4,7 @@ The game is a simple guess the word game based on Mastermind
 
 #pragma once
 #include <string>
+#define Size 5 //This will determine the size of the array 
 //To make the syntax unreal friendly
 
 using FString = std::string;
@@ -46,5 +47,6 @@ private:
 	bool bGameIsWon;
 	bool IsLowercase(FString)const;
 	bool IsIsogram(FString)const;
-	
+	FString WordPicker()const;
+	const FString Words[Size] = { "denis" , "janus", "tariq", "oskar", "charlie" };//I choses these as they are names and isograms. I couldn't think of any others at the time.
 };

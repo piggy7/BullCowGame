@@ -1,9 +1,11 @@
 #pragma once
 #include "FBullCowGame.h"
 #include <map>
-
+#include <cstdlib> 
+#include <ctime>
 //to make syntax unreal friendly
 #define TMap std::map
+
 using int32 = int;
 
 FBullCowGame::FBullCowGame() { Reset(); }//Defualt constructor
@@ -13,6 +15,7 @@ int32 FBullCowGame::GetCurrentTry() const{ return MyCurrentTry; }
 int32 FBullCowGame::GetHiddenWordLength() const{return MyHiddenWord.length();}
 bool FBullCowGame::IsGameWon()const { return bGameIsWon; }
 int32 FBullCowGame::GetMaxTries() const 
+
 {
 	TMap<int32, int32>WordLengthToMaxTries{ {3,4} ,{4,7} ,{5,10} ,{6,15},{7,20} };
 	return WordLengthToMaxTries[MyHiddenWord.length()];
@@ -21,8 +24,8 @@ int32 FBullCowGame::GetMaxTries() const
 //This is the reset and is called to reset all variables to the starting ones
 void FBullCowGame::Reset()
 {
-	const FString HIDDEN_WORD = "planet";//This MUST be a isogram
-	MyHiddenWord = HIDDEN_WORD;
+	
+	MyHiddenWord = WordPicker();
 	MyCurrentTry = 1;
 	bGameIsWon = false;
 	return;
@@ -118,3 +121,8 @@ bool FBullCowGame::IsIsogram(FString Word) const
 		
 	return true;//for example in cases where /0 is entered
 }
+FString FBullCowGame::WordPicker()const { 
+	srand(time(NULL)); 
+	return Words[rand() % Size]; 
+}
+

@@ -54,7 +54,6 @@ void PrintIntro()
 //This will play a single game to completion
 void PlayGame()
 {
-	BCGame.Reset();
 	int32 MaxTries = BCGame.GetMaxTries();
 	while( ! BCGame.IsGameWon() && BCGame.GetCurrentTry()<=MaxTries){
 		FText Guess = GetValidGuess();
@@ -63,6 +62,7 @@ void PlayGame()
 		std::cout << ". cows = " << BullCountCount.Cows<<"\n\n";
 	}
 	PrintGameSummary();
+	BCGame.Reset();
 	return;
 }
 //This will check if the guess is valid 
